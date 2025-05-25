@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cộng đồng Cosmo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="Assets/Images/favicon.ico" type="image/x-icon">
+    <style>
+   
+        .post-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(0,0,0,.2);
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .post-author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ccc; /* Placeholder */
+            margin-right: 10px;
+            overflow: hidden;
+        }
+        .post-author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .post-author-info strong {
+            display: block;
+            font-weight: 600;
+        }
+        .post-author-info small {
+            color: #65676b;
+            font-size: 0.85rem;
+        }
+        .post-content p {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+        .post-media {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .post-media img, .post-media video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .post-actions {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 1rem;
+            border-top: 1px solid #e4e6eb;
+        }
+        .post-actions button {
+            background: none;
+            border: none;
+            color: #65676b;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+        .post-actions button:hover {
+            background-color: #f0f2f5;
+        }
+        .post-actions button i {
+            margin-right: 5px;
+        }
+        .comment-section {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e4e6eb;
+        }
+        .comment-input-form {
+            display: flex;
+            margin-top: 1rem;
+        }
+        .comment-input-form input {
+            flex-grow: 1;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ced0d4;
+            margin-right: 0.5rem;
+        }
+        .comment-input-form button {
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .comment {
+            display: flex;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+        .comment-author-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ccc; /* Placeholder */
+            margin-right: 8px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .comment-author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .comment-content-wrapper {
+            background-color: #f0f2f5;
+            border-radius: 15px;
+            padding: 0.5rem 1rem;
+        }
+        .comment-author-name {
+            font-weight: 600;
+            margin-right: 0.3rem;
+        }
+        .comment-text {
+            word-wrap: break-word;
+        }
+        #postForm {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(0,0,0,.2);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        #postForm h4 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        #postContent {
+            resize: vertical;
+        }
+        .media-upload-preview {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .media-upload-preview img, .media-upload-preview video {
+            max-width: 150px;
+            max-height: 150px;
+            border-radius: 4px;
+            object-fit: cover;
+            border: 1px solid #eee;
+        }
+    </style>
+</head>
+<body class="container py-4">
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Cosmo Explorer</a>
+            </div>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                    <li><a href="solar-system.html" class="nav-link">Hệ Mặt Trời</a></li>
+                    <li><a href="universe.html" class="nav-link">Vũ trụ</a></li>
+                    <li><a href="news.html" class="nav-link">Tin tức</a></li>
+                    <li><a href="study-enter.html" class="nav-link">Học & Giải trí</a></li>
+                    <li><a href="community.html" class="nav-link">Cộng đồng</a></li>
+                    <li id="auth-section" class="nav-item dropdown">
+                        </li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-button" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <h1 class="mb-4">Cộng đồng Cosmo</h1>
+
+    <div id="postForm" class="mb-4">
+        <h4>Tạo bài viết</h4>
+        <form id="createPostForm">
+            <div class="mb-2">
+                <input type="text" id="postTitle" class="form-control" placeholder="Tiêu đề (tùy chọn)">
+            </div>
+            <div class="mb-2">
+                <textarea id="postContent" class="form-control" rows="3" placeholder="Bạn đang nghĩ gì?"></textarea>
+            </div>
+            <div class="mb-2">
+                <label for="postMedia" class="form-label">Thêm ảnh/video (tối đa 3 file)</label>
+                <input type="file" id="postMedia" class="form-control" accept="image/*,video/*" multiple>
+                <div id="mediaPreview" class="media-upload-preview"></div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Đăng bài</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <h4>Bài viết gần đây</h4>
+    <div id="postsContainer">
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="./assets/js/auth.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script>
+     // Đặt các hằng số này ở đầu file JavaScript của bạn (ví dụ: community.html hoặc script.js)
+const API_BASE_URL = 'http://localhost:3000/api';
+const BASE_SERVER_URL = 'http://localhost:3000'; // <-- THÊM DÒNG NÀY
+const POST_API = `${API_BASE_URL}/posts`;
+const COMMENT_API = `${API_BASE_URL}/comments`;
+const token = localStorage.getItem('token');
+const loggedInUserId = localStorage.getItem('userId');
+        // Xử lý preview ảnh/video
+        document.getElementById('postMedia').addEventListener('change', function(event) {
+            const previewContainer = document.getElementById('mediaPreview');
+            previewContainer.innerHTML = ''; // Clear previous previews
+            const files = event.target.files;
+
+            if (files.length > 3) {
+                alert('Bạn chỉ có thể tải lên tối đa 3 file.');
+                this.value = ''; // Clear the input
+                return;
+            }
+
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    let mediaElement;
+                    if (file.type.startsWith('image/')) {
+                        mediaElement = document.createElement('img');
+                        mediaElement.src = e.target.result;
+                        mediaElement.alt = "Ảnh xem trước";
+                    } else if (file.type.startsWith('video/')) {
+                        mediaElement = document.createElement('video');
+                        mediaElement.src = e.target.result;
+                        mediaElement.controls = true;
+                        mediaElement.autoplay = false;
+                    }
+                    if (mediaElement) {
+                        previewContainer.appendChild(mediaElement);
+                    }
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+
+        document.getElementById('createPostForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const title = document.getElementById('postTitle').value;
+            const content = document.getElementById('postContent').value;
+            const mediaFiles = document.getElementById('postMedia').files;
+
+            if (!content && mediaFiles.length === 0) {
+                alert('Vui lòng nhập nội dung hoặc chọn ảnh/video để đăng bài.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('content', content);
+            for (let i = 0; i < mediaFiles.length; i++) {
+                formData.append('media', mediaFiles[i]);
+            }
+
+            try {
+                const res = await fetch(POST_API, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                        // 'Content-Type': 'multipart/form-data' is NOT set manually when using FormData
+                    },
+                    body: formData
+                });
+
+                if (res.ok) {
+                    alert('Đã đăng bài!');
+                    document.getElementById('createPostForm').reset();
+                    document.getElementById('mediaPreview').innerHTML = ''; // Clear preview
+                    loadPosts();
+                } else {
+                    const errorData = await res.json();
+                    alert(`Lỗi đăng bài: ${errorData.message || res.statusText}`);
+                }
+            } catch (error) {
+                console.error('Error creating post:', error);
+                alert('Đã xảy ra lỗi khi kết nối đến máy chủ.');
+            }
+        });
+
+        async function loadPosts() {
+    try {
+        const res = await fetch(POST_API);
+        const posts = await res.json();
+        const container = document.getElementById('postsContainer');
+        container.innerHTML = '';
+
+        for (const post of posts) {
+            const postEl = document.createElement('div');
+            postEl.className = 'post-card';
+
+            // Sửa lỗi 1: Thêm BASE_SERVER_URL vào trước URL media
+            const postMediaHtml = post.mediaUrls ? post.mediaUrls.map(url => {
+                const fullMediaUrl = `${BASE_SERVER_URL}${url}`; // <-- ĐIỀU CHỈNH Ở ĐÂY
+                if (url.match(/\.(jpeg|jpg|gif|png)$/i)) {
+                    return `<img src="${fullMediaUrl}" alt="Post image">`;
+                } else if (url.match(/\.(mp4|webm|ogg)$/i)) {
+                    return `<video controls src="${fullMediaUrl}"></video>`;
+                }
+                return '';
+            }).join('') : '';
+
+            const isLiked = post.likes.includes(loggedInUserId);
+            const likeButtonClass = isLiked ? 'btn-danger' : '';
+
+            // Sửa lỗi 2: Sử dụng avatarUrl từ post.author nếu có, nếu không thì dùng placeholder cục bộ
+            const authorAvatarUrl = post.author && post.author.avatar
+                                  ? `${BASE_SERVER_URL}${post.author.avatar}` // <-- ĐIỀU CHỈNH Ở ĐÂY
+                                  : 'https://placehold.co/40x40/cccccc/ffffff?text=AV'; // Placeholder tốt hơn hoặc ảnh mặc định cục bộ
+
+            postEl.innerHTML = `
+                <div class="post-header">
+                    <div class="post-author-avatar">
+                        <img src="${authorAvatarUrl}" alt="Avatar">
+                    </div>
+                    <div class="post-author-info">
+                        <strong>${post.author ? post.author.username : 'Người dùng ẩn danh'}</strong>
+                        <small>${new Date(post.createdAt).toLocaleString('vi-VN')}</small>
+                    </div>
+                </div>
+                <div class="post-content">
+                    ${post.title ? `<h5>${post.title}</h5>` : ''}
+                    <p>${post.content}</p>
+                    ${postMediaHtml ? `<div class="post-media">${postMediaHtml}</div>` : ''}
+                </div>
+                <div class="post-stats">
+                    <span class="likes-count">${post.likes.length} lượt thích</span>
+                    <span class="comments-count">${post.commentCount || 0} bình luận</span>
+                </div>
+                <div class="post-actions">
+                    <button class="btn btn-sm ${likeButtonClass}" onclick="toggleLike('${post._id}')">
+                        <i class="fas fa-thumbs-up"></i> Thích
+                    </button>
+                    <button class="btn btn-sm" onclick="document.getElementById('comment-${post._id}').focus();">
+                        <i class="fas fa-comment"></i> Bình luận
+                    </button>
+                    <button class="btn btn-sm" onclick="sharePost('${post._id}')">
+                        <i class="fas fa-share"></i> Chia sẻ
+                    </button>
+                </div>
+                <div class="comment-section">
+                    <div id="comments-${post._id}"></div>
+                    <form class="comment-input-form" onsubmit="submitComment(event, '${post._id}')">
+                        <input class="form-control" id="comment-${post._id}" placeholder="Viết bình luận..." required>
+                        <button class="btn btn-primary" type="submit">Gửi</button>
+                    </form>
+                </div>
+            `;
+            container.appendChild(postEl);
+            loadComments(post._id);
+        }
+    } catch (error) {
+        console.error('Error loading posts:', error);
+        // alert('Không thể tải bài viết.');
+    }
+}
+
+        async function toggleLike(postId) {
+            if (!token) {
+                alert('Vui lòng đăng nhập để thích bài viết.');
+                return;
+            }
+            try {
+                const res = await fetch(`${POST_API}/${postId}/like`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (res.ok) {
+                    loadPosts(); // Reload posts to update like count and button state
+                } else {
+                    const errorData = await res.json();
+                    alert(`Lỗi khi thích/bỏ thích: ${errorData.message || res.statusText}`);
+                }
+            } catch (error) {
+                console.error('Error toggling like:', error);
+                alert('Đã xảy ra lỗi khi thích bài viết.');
+            }
+        }
+
+        async function submitComment(e, postId) {
+            e.preventDefault();
+            if (!token) {
+                alert('Vui lòng đăng nhập để bình luận.');
+                return;
+            }
+            const input = document.getElementById(`comment-${postId}`);
+            const content = input.value;
+
+            if (!content.trim()) {
+                alert('Nội dung bình luận không được để trống.');
+                return;
+            }
+
+            try {
+                const res = await fetch(`${COMMENT_API}/${postId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ content })
+                });
+
+                if (res.ok) {
+                    input.value = '';
+                    loadComments(postId);
+                    // Also update post comment count if needed (optional, or reload all posts)
+                    loadPosts();
+                } else {
+                    const errorData = await res.json();
+                    alert(`Lỗi gửi bình luận: ${errorData.message || res.statusText}`);
+                }
+            } catch (error) {
+                console.error('Error submitting comment:', error);
+                alert('Đã xảy ra lỗi khi gửi bình luận.');
+            }
+        }
+
+        // Hàm loadComments cũng cần được sửa tương tự cho avatar của người bình luận
+async function loadComments(postId) {
+    try {
+        const res = await fetch(`${COMMENT_API}/${postId}`);
+        const comments = await res.json();
+        const container = document.getElementById(`comments-${postId}`);
+        container.innerHTML = `<strong>Bình luận:</strong>`;
+        if (comments.length === 0) {
+            container.innerHTML += `<div class="comment-text text-muted ms-3">Chưa có bình luận nào.</div>`;
+        } else {
+            for (const comment of comments) {
+    const commentAuthorAvatarUrl = comment.author && comment.author.avatar
+                                 ? `${BASE_SERVER_URL}${comment.author.avatar}` // <-- CHỈNH SỬA LẠI DÒNG NÀY
+                                 : 'https://placehold.co/30x30/cccccc/ffffff?text=AV';
+
+    container.innerHTML += `
+        <div class="comment">
+            <div class="comment-author-avatar">
+                <img src="${commentAuthorAvatarUrl}" alt="Avatar">
+            </div>
+            <div class="comment-content-wrapper">
+                <span class="comment-author-name">${comment.author ? comment.author.username : 'Người dùng ẩn danh'}</span>
+                <span class="comment-text">${comment.content}</span>
+            </div>
+        </div>
+    `;
+}
+        }
+    } catch (error) {
+        console.error('Error loading comments:', error);
+        // Optionally show a message to the user that comments couldn't be loaded
+    }
+}
+
+        function sharePost(postId) {
+            // This is a basic share function, you might want to implement
+            // social media sharing APIs or a more complex modal.
+            const postUrl = `${window.location.origin}/community.html?postId=${postId}`; // Example URL
+            navigator.clipboard.writeText(postUrl).then(() => {
+                alert('Đã sao chép liên kết bài viết!');
+            }).catch(err => {
+                console.error('Could not copy text: ', err);
+                alert('Không thể sao chép liên kết.');
+            });
+        }
+
+        // Tải userId khi auth.js hoàn tất đăng nhập
+        // Đảm bảo auth.js lưu userId vào localStorage
+        // Ví dụ: localStorage.setItem('userId', userData.id);
+        // và bạn cần gọi lại loadPosts nếu người dùng đăng nhập sau khi trang đã tải
+        // (Đây là một điểm cần tích hợp chặt chẽ với auth.js của bạn)
+
+        // Initial load
+        loadPosts();
+    </script>
+</body>
+</html>

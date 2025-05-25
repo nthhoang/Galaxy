@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tin tức vũ trụ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="Assets/Images/favicon.ico" type="image/x-icon">
+    <style>
+        .news-card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer; /* Biến con trỏ thành bàn tay */
+            height: 100%; /* Đảm bảo chiều cao đồng nhất */
+            display: flex;
+            flex-direction: column;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        .news-card img {
+            height: 200px; /* Chiều cao cố định cho ảnh thumbnail */
+            object-fit: cover;
+            width: 100%;
+        }
+        .card-body {
+            flex-grow: 1; /* Cho phép phần body mở rộng để chiếm không gian */
+            display: flex;
+            flex-direction: column;
+        }
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        .card-text {
+            font-size: 0.95rem;
+            color: #555;
+            flex-grow: 1; /* Cho phép nội dung mở rộng */
+        }
+        .read-more-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+            margin-top: auto; /* Đẩy nút "Xem chi tiết" xuống dưới cùng */
+        }
+        .main-header {
+            margin-bottom: 30px; /* Thêm khoảng cách dưới header */
+        }
+    </style>
+</head>
+<body class="p-4">
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Cosmo Explorer</a>
+            </div>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                    <li><a href="solar-system.html" class="nav-link">Hệ Mặt Trời</a></li>
+                    <li><a href="universe.html" class="nav-link">Vũ trụ</a></li>
+                    <li><a href="news.html" class="nav-link active">Tin tức</a></li>
+                    <li><a href="study-enter.html" class="nav-link">Học & Giải trí</a></li>
+                    <li><a href="community.html" class="nav-link">Cộng đồng</a></li>
+                    <li id="auth-section" class="nav-item dropdown"></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-button" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        <h1 class="mb-4 text-center">Tin tức vũ trụ mới nhất</h1>
+        <div id="postsContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <p class="text-center text-muted col-12">Đang tải tin tức...</p>
+        </div>
+        <div id="message" class="mt-4 text-center"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="./assets/js/auth.js"></script> <script src="./assets/js/script.js"></script> <script>
+        const API_BASE_URL = 'http://localhost:3000/api';
+        const postsContainer = document.getElementById('postsContainer');
+        const messageDiv = document.getElementById('message');
+
+        // Hàm để cắt bớt nội dung thành tóm tắt
+        function truncateText(text, maxLength) {
+            if (text.length <= maxLength) {
+                return text;
+            }
+            return text.substring(0, maxLength) + '...';
+        }
+
+        async function loadNews() {
+            postsContainer.innerHTML = '<p class="text-center text-muted col-12">Đang tải tin tức...</p>';
+            try {
+                const res = await fetch(`${API_BASE_URL}/news`);
+                if (!res.ok) {
+                    throw new Error('Không thể tải tin tức từ server.');
+                }
+                const posts = await res.json();
+                
+                if (posts.length === 0) {
+                    postsContainer.innerHTML = '<p class="text-center text-muted col-12">Chưa có bài viết nào để hiển thị.</p>';
+                    return;
+                }
+
+                postsContainer.innerHTML = ''; // Xóa thông báo tải
+                posts.forEach(post => {
+                    const defaultImageUrl = 'https://via.placeholder.com/400x200?text=No+Image'; // Ảnh placeholder nếu không có ảnh
+                    const imageUrl = post.imageUrl ? `http://localhost:3000${post.imageUrl}` : defaultImageUrl;
+                    const truncatedContent = truncateText(post.content, 150); // Giới hạn 150 ký tự
+
+                    postsContainer.innerHTML += `
+                        <div class="col">
+                            <div class="card news-card" onclick="window.location.href='news-detail.html?id=${post._id}'">
+                                <img src="${imageUrl}" class="card-img-top" alt="${post.title}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${post.title}</h5>
+                                    <p class="card-text">${truncatedContent}</p>
+                                    <small class="text-muted mt-auto">Đăng lúc: ${new Date(post.createdAt).toLocaleString('vi-VN')}</small>
+                                    <a href="news-detail.html?id=${post._id}" class="read-more-link mt-2">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            } catch (err) {
+                console.error('Lỗi khi tải tin tức:', err);
+                postsContainer.innerHTML = '<p class="text-center text-danger col-12">Không thể tải tin tức. Vui lòng kiểm tra kết nối server.</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadNews);
+    </script>
+</body>
+</html>

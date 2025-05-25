@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Mặt Trời (3D) - Khám Phá Vũ Trụ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="Assets/Images/favicon.ico" type="image/x-icon">
+    
+    <style>
+
+        
+
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Cosmo Explorer</a>
+            </div>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                    <li><a href="solar-system.html" class="nav-link active">Hệ Mặt Trời</a></li>
+                    <li><a href="universe.html" class="nav-link">Vũ trụ</a></li>
+                    <li><a href="news.html" class="nav-link">Tin tức</a></li>
+                    <li><a href="study-enter.html" class="nav-link">Học & Giải trí</a></li>
+                    <li><a href="community.html" class="nav-link">Cộng đồng</a></li>
+                    <li id="auth-section" class="nav-item dropdown">
+                </ul>
+            </nav>
+            <button class="mobile-menu-button" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section" id="hero">
+            <img src="https://media.istockphoto.com/id/482954331/vi/anh/h%E1%BB%87-m%E1%BA%B7t-tr%E1%BB%9Di.jpg?s=612x612&w=0&k=20&c=RQnglEmiala9dXC5RgKOkF8vOUMy0F_Np1CnEwdf3wc=" alt="Hệ Mặt Trời" class="hero-bg">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container text-center">
+                <h1 class="animate-on-scroll display-3">Vươn Tới Các Vì Sao</h1> <p class="subtitle animate-on-scroll lead mt-3">Một kỷ nguyên khám phá mới đang chờ đợi. Hãy bắt đầu hành trình không gian của bạn với giao diện tương tác độc đáo.</p>
+            </div>
+            <a href="#intro-section" class="scroll-down-indicator" aria-label="Scroll down"></a>
+        </section>
+
+        <section id="intro-section" class="py-5 text-light">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 animate-on-scroll">
+                        <h2 class="section-title mb-4">Chào Mừng Đến Hệ Mặt Trời</h2>
+                        <p class="lead">Hệ Mặt Trời của chúng ta là một nơi kỳ diệu, bao gồm Mặt Trời ở trung tâm và tất cả các thiên thể bị giữ bởi lực hấp dẫn của nó. Từ những hành tinh đá nóng bỏng gần Mặt Trời đến những gã khổng lồ khí lạnh giá ở xa và những vành đai băng giá ở rìa, mỗi góc của Hệ Mặt Trời đều ẩn chứa những điều bí ẩn và vẻ đẹp riêng.</p>
+                        <p>Hãy cùng Cosmo Explorer khám phá các hành tinh, tìm hiểu về các đặc điểm độc đáo của chúng và chiêm ngưỡng sự hùng vĩ của vũ trụ mà chúng ta đang là một phần nhỏ bé trong đó. Hành trình này sẽ đưa bạn đến gần hơn với những kỳ quan thiên văn ngay trong "sân sau" của Trái Đất.</p>
+                    </div>
+                    <div class="col-lg-6 text-center animate-on-scroll">
+                        <img src="https://www.tindachieu.org/wp-content/uploads/2014/01/3-dieu-trung-hop-la-thuong-trong-he-mat-troi-cua-chung-ta-chung-co-y-nghia-gi-image.jpg" alt="Minh họa Hệ Mặt Trời" class="img-fluid rounded shadow-lg intro-image" style="max-height: 400px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="solar-system-3d-section">
+            <div class="container-fluid">
+                 <div class="row justify-content-center">
+                    <div class="col-12 text-center mb-4 animate-on-scroll">
+                        <h2 class="section-title text-light">Mô hình Hệ Mặt Trời 3D</h2>
+                        <p class="text-light lead">Dùng chuột để xoay, kéo, và cuộn để zoom. Nhấn nút "Dừng/Quay" hoặc phím cách để dừng hoặc tiếp tục chuyển động. Click vào hành tinh để xem chi tiết!</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                        <div id="solar-system-canvas-container" style="position: relative; width: 100%; height: 600px; background: #000; border-radius:10px;">
+                             <button id="toggle-rotation-btn" class="btn btn-primary">Dừng</button>
+                        </div>  
+                    </div>
+                    <div class="col-lg-5 py-lg-0" id="planet-details">
+                        <div class="sticky-top" style="top: 70px;">
+                             <h5 class="text-center text-light mb-4 section-title" style="font-weight: 400; font-size: 30px;" >Thông Tin Chi Tiết</h5>
+                            <div class="planet-info-card text-light planet-info" id="info-sun">
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <img src="https://genk.mediacdn.vn/2017/photo-0-1489743516228.jpg" class="img-fluid planet-detail-img" alt="Hình ảnh Mặt Trời">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3>Mặt Trời</h3>
+                                        <p>Mặt Trời là ngôi sao trung tâm của Hệ Mặt Trời, cung cấp năng lượng cho sự sống trên Trái Đất.</p>
+                                        <ul>
+                                            <li><strong>Loại sao:</strong> Sao lùn vàng (G2V)</li>
+                                            <li><strong>Đường kính:</strong> ~1,39 triệu km</li>
+                                            <li><strong>Khối lượng:</strong> ~$1,99 \times 10^{30}$ kg</li>
+                                            <li><strong>Nhiệt độ bề mặt:</strong> ~5.500°C</li>
+                                        </ul>
+                                        <p>Mặt Trời chiếm 99,86% khối lượng của Hệ Mặt Trời và có tuổi thọ khoảng 4,6 tỷ năm.</p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="planet-info-card text-light planet-info d-none" id="info-mercury">
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <img src="https://svs.gsfc.nasa.gov/vis/a010000/a014100/a014110/MercuryGlobePreview.jpg" class="img-fluid planet-detail-img" alt="Hình ảnh Thủy Tinh">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3>Thủy Tinh</h3>
+                                        <p>Thủy Tinh là hành tinh gần Mặt Trời nhất, có bề mặt giống Mặt Trăng với nhiều hố va chạm.</p>
+                                        <ul>
+                                            <li><strong>Vị trí:</strong> Gần Mặt Trời nhất</li>
+                                            <li><strong>Khoảng cách từ Mặt Trời:</strong> ~58 triệu km</li>
+                                            <li><strong>Đường kính:</strong> ~4.880 km</li>
+                                            <li><strong>Chu kỳ quay (ngày):</strong> ~58,6 ngày</li>
+                                            <li><strong>Chu kỳ quỹ đạo (năm):</strong> ~88 ngày</li>
+                                            <li><strong>Đặc điểm nổi bật:</strong> Nhiệt độ cực đoan</li>
+                                        </ul>
+                                        <p>Do không có khí quyển đáng kể, Thủy Tinh trải qua sự chênh lệch nhiệt độ lớn giữa ngày và đêm.</p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="planet-info-card text-light planet-info d-none" id="info-venus">
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Venus.jpg" class="img-fluid planet-detail-img" alt="Hình ảnh Kim Tinh">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3>Kim Tinh</h3>
+                                        <p>Kim Tinh là hành tinh nóng nhất trong Hệ Mặt Trời do hiệu ứng nhà kính mạnh.</p>
+                                        <ul>
+                                            <li><strong>Vị trí:</strong> Thứ 2 từ Mặt Trời</li>
+                                            <li><strong>Khoảng cách từ Mặt Trời:</strong> ~108 triệu km</li>
+                                            <li><strong>Đường kính:</strong> ~12.104 km</li>
+                                            <li><strong>Chu kỳ quay (ngày):</strong> ~243 ngày</li>
+                                            <li><strong>Chu kỳ quỹ đạo (năm):</strong> ~225 ngày</li>
+                                            <li><strong>Đặc điểm nổi bật:</strong> Quay ngược chiều</li>
+                                        </ul>
+                                        <p>Khí quyển của Kim Tinh chứa chủ yếu $CO_2$ và có áp suất gấp 92 lần Trái Đất.</p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="planet-info-card text-light planet-info d-none" id="info-earth">
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <img src="https://images.pexels.com/photos/87651/earth-blue-planet-globe-planet-87651.jpeg?cs=srgb&dl=pexels-pixabay-87651.jpg&fm=jpg" class="img-fluid planet-detail-img" alt="Hình ảnh Trái Đất">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3>Trái Đất</h3>
+                                        <p>Trái Đất là hành tinh duy nhất được biết có sự sống.</p>
+                                        <ul>
+                                            <li><strong>Vị trí:</strong> Thứ 3 từ Mặt Trời</li>
+                                            <li><strong>Khoảng cách từ Mặt Trời:</strong> ~150 triệu km</li>
+                                            <li><strong>Đường kính:</strong> ~12.742 km</li>
+                                            <li><strong>Chu kỳ quay (ngày):</strong> ~24 giờ</li>
+                                            <li><strong>Chu kỳ quỹ đạo (năm):</strong> ~365,25 ngày</li>
+                                            <li><strong>Đặc điểm nổi bật:</strong> Có đại dương và khí quyển giàu oxy</li>
+                                        </ul>
+                                        <p>Trái Đất có một vệ tinh tự nhiên là Mặt Trăng, ảnh hưởng đến thủy triều.</p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="planet-info-card text-light planet-info d-none" id="info-mars">
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <img src="data:image/jpeg;base64,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" class="img-fluid planet-detail-img" alt="Hình ảnh Hỏa Tinh">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3>Hỏa Tinh</h3>
+                                        <p>Hỏa Tinh, hay hành tinh đỏ, nổi tiếng với màu sắc và tiềm năng tìm kiếm sự sống.</p>
+                                        <ul>
+                                            <li><strong>Vị trí:</strong> Thứ 4 từ Mặt Trời</li>
+                                            <li><strong>Khoảng cách từ Mặt Trời:</strong> ~228 triệu km</li>
+                                            <li><strong>Đường kính:</strong> ~6.792 km</li>
+                                            <li><strong>Chu kỳ quay (ngày):</strong> ~24,6 giờ</li>
+                                            <li><strong>Chu kỳ quỹ đạo (năm):</strong> ~687 ngày</li>
+                                            <li><strong>Đặc điểm nổi bật:</strong> Núi Olympus Mons lớn nhất Hệ Mặt Trời</li>
+                                        </ul>
+                                        <p>Hỏa Tinh có hai vệ tinh là Phobos và Deimos.</p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="planet-info-card text-light planet-info d-none" id="info-jupiter">
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <img src="data:image/jpeg;base64,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" class="img-fluid planet-detail-img" alt="Hình ảnh Mộc Tinh">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3>Mộc Tinh</h3>
+                                        <p>Mộc Tinh là hành tinh lớn nhất trong Hệ Mặt Trời, một hành tinh khí khổng lồ.</p>
+                                        <ul>
+                                            <li><strong>Vị trí:</strong> Thứ 5 từ Mặt Trời</li>
+                                            <li><strong>Đường kính:</strong> ~139.820 km</li>
+                                            <li><strong>Khối lượng:</strong> Gấp 318 lần Trái Đất</li>
+                                            <li><strong>Chu kỳ quay (ngày):</strong> ~9,9 giờ</li>
+                                            <li><strong>Chu kỳ quỹ đạo (năm):</strong> ~11,86 năm</li>
+                                            <li><strong>Đặc điểm nổi bật:</strong> Vết Đỏ Lớn, một cơn bão khổng lồ</li>
+                                        </ul>
+                                        <p>Mộc Tinh có ít nhất 79 vệ tinh, bao gồm Ganymede, vệ tinh lớn nhất Hệ Mặt Trời.</p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="planet-info-card text-light planet-info d-none" id="info-saturn">
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <img src="data:image/jpeg;base64,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" class="img-fluid planet-detail-img" alt="Hình ảnh Thổ Tinh">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3>Thổ Tinh</h3>
+                                        <p>Thổ Tinh nổi tiếng với hệ thống vành đai ngoạn mục.</p>
+                                        <ul>
+                                            <li><strong>Vị trí:</strong> Thứ 6 từ Mặt Trời</li>
+                                            <li><strong>Đường kính:</strong> ~116.460 km</li>
+                                            <li><strong>Chu kỳ quay (ngày):</strong> ~10,7 giờ</li>
+                                            <li><strong>Chu kỳ quỹ đạo (năm):</strong> ~29,46 năm</li>
+                                            <li><strong>Đặc điểm nổi bật:</strong> Vành đai gồm băng và đá</li>
+                                        </ul>
+                                        <p>Thổ Tinh có 83 vệ tinh được đặt tên, trong đó Titan lớn hơn cả Thủy Tinh.</p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="planet-info-card text-light planet-info d-none" id="info-uranus">
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <img src="data:image/jpeg;base64,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" class="img-fluid planet-detail-img" alt="Hình ảnh Thiên Vương Tinh">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3>Thiên Vương Tinh</h3>
+                                        <p>Thiên Vương Tinh là một hành tinh băng khổng lồ với trục quay nghiêng bất thường.</p>
+                                        <ul>
+                                            <li><strong>Vị trí:</strong> Thứ 7 từ Mặt Trời</li>
+                                            <li><strong>Đường kính:</strong> ~50.724 km</li>
+                                            <li><strong>Chu kỳ quay (ngày):</strong> ~17,2 giờ</li>
+                                            <li><strong>Chu kỳ quỹ đạo (năm):</strong> ~84 năm</li>
+                                            <li><strong>Đặc điểm nổi bật:</strong> Trục nghiêng 98 độ</li>
+                                        </ul>
+                                        <p>Khí quyển của Thiên Vương Tinh chứa methane, tạo màu xanh lam.</p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="planet-info-card text-light planet-info d-none" id="info-neptune">
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIVFRUVFRUXFRcVFxcVFRcXFRcXFxUVFxcYHSggGBolHRUXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQFysZFR0tKy0tLSsrLS0tLS03LS0tLS0tLS0tLS0tLS0tKy0tLSstKy0rKy0yLS0rLS0sLS0rK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAwQBAgUGB//EADgQAAICAQEFBQYEBQUBAAAAAAABAgMEEQUSIVFhBhMxQXEygZGhsdEiQnLwFCOyweEzUsLS8Rb/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAQIDBAX/xAAfEQEBAQEBAQEBAAMBAAAAAAAAAQIRAxIhMRMyQVH/2gAMAwEAAhEDEQA/APhoAAAAAAAAAAAGQMAuY+zLp+zXLTm+C+Z0auzFr9ppemr+xaZt/kRdSOED1EOyvOTfwRv/APMR5yLzy0r/AJMvKA9RLs3HqV7OzvJsf4dH+TLz4OpdsWa8NGUrcWcfGL+pW41P+LSyoAZ0MFEgAAAAAAAAAAAAAAAAAAAAAbQrcmkk234JcW/RHU2LsKzIeq/DDzm1w9Ir8zPdbL2NVQtIR4+cnxk/f5Loi+PO6/imtzLyezeydk9Ha9xclxl9l8z0uDsGmr2Yceb4v4vw9x11EydePCRz69bVdUJeRt3ZPojVnRMM/pDuGrgTs1aJ+TqtKBFKsttIjkh8p6o2UoqXYifkdWSIZxK3C0085l7Ji/I4uVs2UfDivme1srKd9GpjrylaZ9HiGtDB6HO2cn6nEvocXxOXflZ/G011CADJYAAAAAAAAAAAAAD03Zvs33qVl2qr/LHwlPr0j18/ma9ldhd6+9sX8tPgn+dr/ivPn4c9PdxRt5eX1+3+MvT05+T+lVaikkkkkkkuCSXkuRvobKJuqz0MefHJddR6GdCZQNu7NplX6V9DDiWdwd2W+UdVXE1cS3uGjgT8nVRxI5RLkoEcoEfKeqckQyRelAglAr8rSqckQWIuTgQTiZ3K0rn3QOZl4yZ2rYlS2BlrLTOnk8nHcWVz0OXRqjh31aM5PXz5+x0Z11EADnWAAAAAAAADqdn9lPIs3XwhHjN9OS6v7vyObCLbSS1beiS8W35H0vYOzFRUofmfGb5ya+i8P/WX88fV4pvXzF+mpJKMUkkkkl4JLgkizCArgWIQPTxmSOHWmsYEkYEkYEigdEjO1EoGd0nUTOheRHUG4Nwn0Ghbh1XcDVwLLiaOI4nqrKBHKBbcTSSI4lSlEhnEuziQziVsTFGcSCyBflArWQKWLyufbEqWwOlZEq2wM9ReVyr6zj5tGp6C6Bzcmsx1lrmvOyWhqWcqvRlY4PTPzW8AAZpAAAAMoD0XY3Z+/Z3r8K/DrN66fBav10PoFEDjdmsHuqYRfi/xS/VLjp7lovcegqR2+GeTrk9ddqeutIkRHAmijuxHNaykbpBI3SNpFGEjKRskbKJeRDTQxoS7phxLcEW6atEziaNE8OoWiOSJ3E0lEjiVaSIposTRDJFLFleaIJotSRXmili8qpZEqWwL1iK1iM7F4510Tn5EDq2ooZETLUa5cHNrOXJHdy4nFtjxOT3z2N81GADjXAAALmyMbvLq4Pwclr6LjL5JlM9D2Mp1uctPZg9PWTS+m8TEW8j3tCLsEVaEXa+B6flPx5+ksETRRX70d4bzXFOLsUSRRQjcWKsx+vr/AINZtS5WkjOhvVtHhp3cNeZt/Ea/kRpnXf8AiOIg0byt6L3I0ky8qGrRq0b6gnoikiOSJ3Hqvjp9TWVLI7EqskRTiWJwa8iCaIqYrziV5otTIJlKvFOxFWxF2xFW1GVaRRtKNyL9yKN5jqNMuVlI4uTHidzJRxstcTD0n43ypgyzB5zUAAA9b2HhwslzcV8E/wDseSPZdiV/Ll+t/wBMS2P9op6f617LHRNKRriQ1/f0Npx48OK+h6Wb+OKsRZkxCL9eherwJcPTXimvkXiOKUUWK4l5bLs8dOHPwQjjqPi18fsaZ/VL+FVMl09WvmiVs2WQt3dSWnVt/JsicjbNUrbeM8ObXu/yR6mGy/UJnCPlJe9P/JFJdV8zVs0bHTjaWq5mrs0NXI0lIjqW0rXz+JHK3ml6msmRSC0Jsr2G8mRSmVtWiCwrWE9kivYUtXincijeXrijeZaaZczJOPmHYyTjZZhtvlTZgyzB51/rUABAHsexL/ly/W/6Ynjj1PYu3/Uj+l/HX7E5/sU3/rXuqGXIdShjsuwZ6WHDpbxZ7j10X7+h2KNuOPs1w6arU4UWSpm3zL/Ve1fy9pW2+3PhyXBfBFbUjNka5kn5Fa21DZqNS6GdRqY1MNknBs1bMtmrCGHIjlI2kRtkJjVyI5M2kyKRFq0aykQzZvJkM2VtWkRTK9jJZyK1sitq8Q2vUoXst2MpZDMrWmY5+SzjZb4nVymcfIfEx3fxtlXZgA8+tQAEAdrsrdu3af7ote9aP6JnFLGBfuWQlyktfTz+QRZ2PqmNLgXq2crDs1SOjWz0PPX44dRbgyWLK8WSqR0ys7EuptqQ7xq5mkqOJ3IwporuxGrtQ+jix3hhzKzuNXaT9p4tOZpvlfvTV3EfZxYczVzI956ake+h9p+UrkRSZo5GkpD6TxmTIZs2lIhnIjqUdjK1rJpyK1jKWrRXtZRyJFq2RQyJGdrSKGXI5FrOhl2HMmzm9dcjfMagA41wAADKMAD3nZjN36lr4x/C/d4P4HpaZHzbs1nd3buv2Z8PR+T/ALe8+gY9vA6PHfPxy+ueV0YzNlLmVoyDmdk0x4sO00c2Q7xnUv0433jGpjUEnDUwZMagYbNWzLZq2T1J3j5s1nNhs0kyBhzNe8EiGRCUkrCOUiKTIpTI6niScytZIzOwr2TFq0iK6RzciZavmcvLtM7V8xRyp6sqtm9ktSM4vXXbxvAAGSQAAAABlM932d2n3sFq/wAUeEv7P3ngy3s3NdM1JeHmuaJl5eq6z2PpsbDdSOXh5anFSi9U0XYTOzG+uWzi0pGd8r75umbSqpHMcTVGUXgGGjcaFuIRNGrJnEjkieCNyZo5m8kRSKrDkQ2MTIpTK1MaO0jlamLOhWtmUtW43skVrLBOzgU7rSvVpGuRacnKtJsq858mZb3yNMxhswAcjQAAAAAAAAAAHU2NtR1PR+w/Hp1R7HHyFJap6pnzo6Oy9pyqej4x5cuq+xbOrmqbx176FhPGRxcTOUlqnqmXoXHXj0657lfiyWJTrsJI2G00pxbTQ3iurDbvC80jiVs0bNHYaSsJ+k8Zk0QzQlMhnYR1Ma2MrTZJOwqW2FbVpGJzK9lhrbaUr7zK1eRvdac3JyDXJySjOeplrfI0zknPU0AOa3rQABAAAAAAAAAAAAAAJ8XLlW9Yv1Xkz0OBtiMuD4Pl9jy5kmXn8VuZXvqMvqWO/wCJ4PH2hOPnquv3Opj7aXg+H75mufWz+s75vVrIDyDg17QT8GSfxi5ms9JWfy7DyDDyDkfxZq8ot9ny60sghnecx5ZXszeo+0/LpWZBVuyDm25y5lK3NbK30i0zXQvyupzb8nUgnNs0Mden/jWZ4y2YAM7VgAEAAAAAAAAAAAAAAAAAAAAAAymSRyJLzZEALCy58zDypcyAE9RyJXfLmaOb5moHacjJgAhIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/9k=" class="img-fluid planet-detail-img" alt="Hình ảnh Hải Vương Tinh">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3>Hải Vương Tinh</h3>
+                                        <p>Hải Vương Tinh là hành tinh xa Mặt Trời nhất, nổi tiếng với gió mạnh và màu xanh đậm.</p>
+                                        <ul>
+                                            <li><strong>Vị trí:</strong> Thứ 8 từ Mặt Trời</li>
+                                            <li><strong>Đường kính:</strong> ~49.244 km</li>
+                                            <li><strong>Chu kỳ quay (ngày):</strong> ~16 giờ</li>
+                                            <li><strong>Chu kỳ quỹ đạo (năm):</strong> ~164,8 năm</li>
+                                            <li><strong>Đặc điểm nổi bật:</strong> Gió mạnh nhất Hệ Mặt Trời</li>
+                                        </ul>
+                                        <p>Hải Vương Tinh có 14 vệ tinh, với Triton là vệ tinh lớn nhất.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div> 
+                    </div> 
+                </div> 
+            </section>
+
+        <section id="fascinating-facts" class="py-5 text-light" style="background-color: #112240;">
+            <div class="container">
+                <h2 class="section-title mb-5 text-center animate-on-scroll">Sự Thật Thú Vị Về Hệ Mặt Trời</h2>
+                <div class="row gy-4 animate-on-scroll">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="fact-card text-center">
+                            <i class="fas fa-meteor fa-fw"></i>
+                            <h5>Sao Chổi & Thiên Thạch</h5>
+                            <p>Hàng triệu thiên thạch và sao chổi bay quanh Hệ Mặt Trời. Sao chổi Halley nổi tiếng quay trở lại sau mỗi 76 năm!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="fact-card text-center">
+                            <i class="fas fa-atom fa-fw"></i>
+                            <h5>Vành Đai Tiểu Hành Tinh</h5>
+                            <p>Nằm giữa Hỏa Tinh và Mộc Tinh, Vành Đai Tiểu Hành Tinh chứa hàng triệu thiên thể đá, từ hạt bụi đến hành tinh lùn Ceres.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="fact-card text-center">
+                            <i class="fas fa-satellite fa-fw"></i>
+                            <h5>Vô Số Mặt Trăng</h5>
+                            <p>Ngoài Mặt Trăng của Trái Đất, các hành tinh khác cũng có nhiều vệ tinh tự nhiên. Mộc Tinh và Thổ Tinh dẫn đầu với hàng chục mặt trăng mỗi hành tinh.</p>
+                        </div>
+                    </div>
+                     <div class="col-md-6 col-lg-4">
+                        <div class="fact-card text-center">
+                            <i class="fas fa-sun fa-fw"></i>
+                            <h5>Năng Lượng Mặt Trời</h5>
+                            <p>Năng lượng Mặt Trời mất khoảng 8 phút 20 giây để đến Trái Đất, di chuyển với tốc độ ánh sáng.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="fact-card text-center">
+                            <i class="fas fa-wind fa-fw"></i>
+                            <h5>Gió Siêu Tốc</h5>
+                            <p>Hải Vương Tinh có những cơn gió mạnh nhất trong Hệ Mặt Trời, với tốc độ có thể lên tới hơn 2.000 km/giờ.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="fact-card text-center">
+                            <i class="fas fa-mountain fa-fw"></i>
+                            <h5>Núi Lửa Khổng Lồ</h5>
+                            <p>Olympus Mons trên Hỏa Tinh là núi lửa lớn nhất đã biết trong Hệ Mặt Trời, cao gấp ba lần đỉnh Everest.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="beyond-planets" class="py-5 text-light" style="background-color: #0a192f;">
+            <div class="container">
+                <h2 class="section-title text-center  mb-4 animate-on-scroll">Ngoài Các Hành Tinh</h2>
+                <div class="row animate-on-scroll">
+                    <div class="col-md-6 mb-4">
+                        <h4>Vành Đai Kuiper</h4>
+                        <p>Là một vùng rộng lớn chứa các thiên thể băng giá nằm ngoài quỹ đạo của Hải Vương Tinh. Đây là "nhà" của các hành tinh lùn như Sao Diêm Vương (Pluto), Haumea và Makemake. Vành đai Kuiper được cho là nguồn gốc của nhiều sao chổi chu kỳ ngắn.</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h4>Đám Mây Oort</h4>
+                        <p>Một vùng hình cầu giả thuyết, bao bọc Hệ Mặt Trời ở khoảng cách rất xa, có thể kéo dài tới một phần tư quãng đường đến ngôi sao gần nhất. Đám mây Oort được cho là chứa hàng tỷ sao chổi và là nguồn gốc của các sao chổi chu kỳ dài.</p>
+                    </div>
+                </div>
+                <p class="text-center mt-4 animate-on-scroll">Hệ Mặt Trời còn ẩn chứa vô vàn điều kỳ diệu khác đang chờ chúng ta khám phá, từ các hành tinh lùn, tiểu hành tinh cho đến những vùng không gian xa xôi ở rìa của nó.</p>
+            </div>
+        </section>
+         <section id="featured-highlights" class="featured-highlights-section py-5" style="background-color: #112240;;">
+            <div class="container">
+                <h2 class="section-title text-center mb-5 animate-on-scroll">Khám phá nổi bật</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4 animate-on-scroll">
+                        <div class="card h-100 shadow-sm custom-card">
+                            <img src="https://img.freepik.com/free-vector/planets-solar-system-infographic_1308-51094.jpg?semt=ais_hybrid&w=740" class="card-img-top" alt="Hệ Mặt Trời">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Hệ Mặt Trời</h5>
+                                <p class="card-text">Du hành qua các hành tinh, mặt trăng và các thiên thể khác trong sân nhà vũ trụ của chúng ta.</p>
+                                <a href="solar-system.html" class="btn btn-primary mt-auto">Khám phá</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 animate-on-scroll">
+                        <div class="card h-100 shadow-sm custom-card">
+                            <img src="https://mega.com.vn/media/news/1706_hinh-nen-phi-hanh-gia133.jpg" class="card-img-top" alt="Vũ trụ">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Vũ Trụ Bao La</h5>
+                                <p class="card-text">Tìm hiểu về các thiên hà, tinh vân, lỗ đen và những cấu trúc vĩ đại nhất của vũ trụ.</p>
+                                <a href="universe.html" class="btn btn-primary mt-auto">Tìm hiểu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 animate-on-scroll">
+                        <div class="card h-100 shadow-sm custom-card">
+                            <img src="https://www.nasa.gov/wp-content/uploads/2015/08/jsc2015e032666_blog.jpg" class="card-img-top" alt="Tin tức vũ trụ">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Tin Tức Vũ Trụ</h5>
+                                <p class="card-text">Cập nhật những phát hiện, sự kiện và sứ mệnh không gian mới nhất từ khắp nơi trên thế giới.</p>
+                                <a href="news.html" class="btn btn-primary mt-auto">Xem tin tức</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+
+    <footer class="main-footer pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Cosmo Explorer</h5>
+                    <p>Dare to Explore the Unprecedented. Khám phá vũ trụ cùng chúng tôi, nơi mọi giới hạn đều bị phá vỡ.</p>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Liên kết</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about-us.html">Về chúng tôi</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy.html">Chính sách</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Kết nối</h5>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Bản tin</h5>
+                    <p>Đăng ký để nhận thông tin mới nhất về vũ trụ!</p>
+                    <form id="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email của bạn" required>
+                            <button class="btn btn-primary" type="submit">Đăng ký</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; <span id="current-year"></span> Cosmo Explorer. All Rights Reserved. Designed with <i class="fas fa-heart text-danger"></i> for Space Enthusiasts.</p>
+            </div>
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script> 
+<script src="assets/js/script.js"></script>
+<script src="assets/js/solar-system.js"></script>
+<script src="./assets/js/auth.js"></script>
+    
+    </body>
+</html>
