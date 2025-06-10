@@ -14,8 +14,8 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(express.json()); // Xử lý JSON body
-app.use(cookieParser());
+app.use(express.json()); // Xử lý JSON body để có thể đọc được json trong body của req
+app.use(cookieParser()); // Để có thể lấy được token thông qua req.cookie.token
 
 // Cấu hình CORS để cho phép frontend truy cập
 app.use(cors({
