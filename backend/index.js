@@ -19,7 +19,7 @@ app.use(cookieParser()); // Để có thể lấy được token thông qua req.
 
 // Cấu hình CORS để cho phép frontend truy cập
 app.use(cors({
-  origin: ['http://localhost:5500', 'http://127.0.0.1:5500'], // địa chỉ frontend (nếu bạn dùng live-server)
+  origin: ['http://localhost:5500', 'http://127.0.0.1:5500', 'https://hoangnth.id.vn'], // địa chỉ frontend (nếu bạn dùng live-server)
   credentials: true
 }));
 
